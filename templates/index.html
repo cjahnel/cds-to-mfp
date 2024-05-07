@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getData">This is a button</button>
+</body>
+<script>
+    const menu_json = {{ menu_data|tojson }};
+    const menu = JSON.parse(menu_json);
+
+    for (item in menu["The Griddle"]) {
+        console.log(item);
+    }
+    console.log(menu["Rotisserie"]);
+
+    // function getUrl() {
+    //     let url = "/data";
+
+    //     return fetch(url).then(function(response) {
+    //         return response.json();
+    //     }).then(function(data) {
+    //         console.log(data);
+    //     }).catch(function(err) {
+    //         console.log('Fetch Error :-S', err);
+    //     });
+    // }
+
+    // document.getElementById("getData").onclick = getUrl;
+
+    // fetch("127.0.0.1:5000/data")
+    // fetch("https://www.google.com")
+</script>
+</html>
